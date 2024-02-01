@@ -1,0 +1,35 @@
+#root{
+    width: 50rem;
+    height: 30rem;
+    border-radius: 5px;
+    border: 2px solid black;
+
+    margin: auto;
+    margin-top: 10rem;
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 10px;
+}
+#root > div {
+    background-color: red;
+    border-radius: 5px;
+}
+.carta{
+    height: 100%;
+    background-color: orange;
+    border-radius: 5px;
+    font-size: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.carta:hover{
+    cursor: pointer;
+    background-color: rgb(160, 111, 5);
+    box-shadow: 6px 3px 3px rgb(22, 2, 2);
+}
