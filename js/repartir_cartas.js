@@ -1,22 +1,40 @@
-import { cards1, cards2 } from "./Data_cartas.js";
+//Todas las cartas
+import { lista_cartas_nivel } from "./Data_cartas.js";
 
-// Combinar las cartas en un solo array
-let todas_las_cartas = cards1.concat(cards2);
+// Función para construir un nivel del juego
+function construir_nivel(nivel){
 
-// Función para repartir las cartas en el tablero
-function repartir_Cartas() {
-    // Seleccionar el tablero donde se mostrarán las cartas
-    let tablero = document.querySelector(".tablero");
+    // Función para ordenar de forma aleatoria un arreglo
+    function ordenarAleatorio(a, b) {
+        return Math.random() - 0.5;
+    }
 
-    // Iterar sobre cada carta y crear un elemento HTML para representarla en el tablero
-    todas_las_cartas.forEach((cada_Carta) => {
-        let carta = document.createElement("div"); // Crear un nuevo div para representar la carta
-        carta.classList.add("carta_trasera"); // Añadir la clase "carta_trasera" al div
-        carta.innerHTML = `<div class="carta_frontal">${cada_Carta}</div>`; // Agregar el contenido de la carta dentro del div
-        tablero.appendChild(carta); // Agregar el div al tablero como un hijo
-    });
+    // Duplicar las cartas del nivel y mezclarlas aleatoriamente
+    let todas_las_tarjetas = lista_cartas_nivel[nivel].concat(lista_cartas_nivel[nivel]);
+    todas_las_tarjetas.sort(ordenarAleatorio);
+
+    // Devolver la lista aleatoria de cartas
+    return todas_las_tarjetas;
 }
 
-// Llamar a la función para repartir las cartas
-repartir_Cartas();
+// Asignar el nivel de dificultad para construir el tablero
+let nivel = construir_nivel(0); // Cambia el nivel según se desee
 
+// Función para distribuir las cartas en el tablero según el nivel
+function repartir_cartas(nivel){
+
+    // Seleccionar el contenedor del tablero
+    let tablero = document.querySelector(".tablero");
+
+    // Recorrer cada carta en el nivel y agregarla al tablero
+    nivel.forEach((cada_carta)=> {
+        let carta = document.createElement("div");
+        carta.classList.add("carta_trasera")
+        carta.innerHTML = `<div class="carta_frontal">${cada_carta}</div>`;
+        tablero.appendChild(carta);
+    })
+
+}
+
+// Llamar a la función para distribuir las cartas en el tablero con el nivel indicado
+repartir_cartas(nivel);
