@@ -1,0 +1,38 @@
+.ventana_modal{
+    background-color: rgba(236, 154, 100, 0.445);
+    grid-column: 1/9;
+    grid-row: 1/9;
+
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.boton1{
+    width: 70%;
+    height: 30%;
+    grid-row: 3/4;
+    grid-column: 2/3;
+    margin: auto;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom right, #e27068, #f0b46f);
+}
+
+.boton2{
+    width: 70%;
+    height: 30%;
+    grid-row: 3/4;
+    grid-column: 3/4;
+    margin: auto;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom right, #e27068, #f0b46f);
+}
+.boton3{
+    width: 70%;
+    height: 30%;
+    grid-row: 3/4;
+    grid-column: 4/5;
+    margin: auto;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom right, #e27068, #f0b46f);
+}

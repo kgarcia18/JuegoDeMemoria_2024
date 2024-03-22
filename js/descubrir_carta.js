@@ -5,7 +5,8 @@ import { Cargar_puntos } from "./Puntos.js";
 import { vidas } from "./Actualizar_vidas.js";
 import { iniciar_cronometro } from "./Cargar_cronometro.js";
 
-// Selección de todas las cartas del juego
+function Descubrir_carta (){
+    // Selección de todas las cartas del juego
 let todas_las_cartad = document.querySelectorAll(".carta_trasera");
 
 // Contador para el número de cartas encontradas
@@ -23,8 +24,10 @@ todas_las_cartad.forEach((cada_div) => {
 
         // Si es la primera carta que se voltea, se inicia el cronómetro
         if(estado_del_cronometro == 1){
-            iniciar_cronometro(0, 60); // Inicia el cronómetro con un tiempo máximo de 60 segundos
+
+            iniciar_cronometro(0, 5); // Inicia el cronómetro con un tiempo máximo de 60 segundos
         }
+        /* Imprimir aca*/
 
         // Verificar si hay menos de 2 cartas descubiertas
         let cartas_descubiertas = document.querySelectorAll(".activar");
@@ -78,3 +81,8 @@ if (estado_del_cronometro){
     console.log("Activa");
 }
 
+
+}
+
+Descubrir_carta();
+export{Descubrir_carta};

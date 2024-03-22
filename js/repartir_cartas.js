@@ -20,16 +20,18 @@ function construir_nivel(nivel){
 // Asignar el nivel de dificultad para construir el tablero
 let nivel = construir_nivel(0); // Cambia el nivel según se desee
 
+
 // Función para distribuir las cartas en el tablero según el nivel
 function repartir_cartas(nivel){
 
     // Seleccionar el contenedor del tablero
     let tablero = document.querySelector(".tablero");
+    tablero.innerHTML = "";
 
     // Recorrer cada carta en el nivel y agregarla al tablero
     nivel.forEach((cada_carta)=> {
         let carta = document.createElement("div");
-        carta.classList.add("carta_trasera")
+        carta.classList.add("carta_trasera");
         carta.innerHTML = `<div class="carta_frontal">${cada_carta}</div>`;
         tablero.appendChild(carta);
     })
@@ -38,3 +40,6 @@ function repartir_cartas(nivel){
 
 // Llamar a la función para distribuir las cartas en el tablero con el nivel indicado
 repartir_cartas(nivel);
+
+export{repartir_cartas}
+export{nivel}
